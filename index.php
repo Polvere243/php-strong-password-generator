@@ -9,9 +9,7 @@ function generatePassword ($password_length)
     $symbols = ['!', '?', '£', '%', '/', '=', '§']; 
     $characters = [...$numbers, ...$letters, ...$symbols];
     $new_password = '';
-    while (mb_strlen($new_password)< $password_length && str_contains($new_password, ))
-    
-    
+    // while (mb_strlen($new_password)< $password_length && str_contains($new_password, ));
 }
 
 generatePassword('password-length');
@@ -29,9 +27,12 @@ generatePassword('password-length');
 <body>
     <div class="container">
         <h1>Generatore di Password</h1>
-        <div>
+        <div class="form-box">
             <form action="" method="get">
-                <input type="number" name="password-length" min="1">
+                <div class="input-box">
+                    <label for="password">Scegli una lunghezza</label>
+                    <input type="number" id="password" name="password-length" min="1">
+                </div>
                 <input class="btn" type="submit" value="Invia" >
             </form>
         </div>
