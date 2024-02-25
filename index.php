@@ -1,8 +1,8 @@
 <?php 
-$length = $_GET['password-length'] ?? '';
+$length = $_GET['length'] ?? '';
 
 if (!empty($length)) {
-    generatePassword('length');
+    $password = generatePassword($length);
 }
 
 
@@ -28,6 +28,7 @@ function generatePassword ($length)
         $random_character = $characters[$random_index];
         // concateno i caratteri casuali per formare la password
         $password .= $random_character;
+
     }
     // restituisco la password generata
     return $password;
@@ -46,17 +47,17 @@ function generatePassword ($length)
 <body>
     <?php if (isset($password)) :?>
         <div class="alert">
-            <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span>
             <p>La tua password è: <strong><?= $password ?></strong></p>
+            <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span>
         </div>
-    <?php endif?>
+    <?php endif; ?>
     <div class="container">
         <h1>Generatore di Password</h1>
         <div class="form-box">
             <form action="" method="get">
                 <div class="input-box">
                     <label for="password">Scegli una lunghezza</label>
-                    <input type="number" id="password" name="length" min="5" value=" <?= $length ?? "5" ?>" step="1">
+                    <input type="number" id="password" name="length" min="5" value="<?= $length ?? 5 ?>" step="1">
                 </div>
                 <input class="btn" type="submit" value="Invia" >
             </form>
