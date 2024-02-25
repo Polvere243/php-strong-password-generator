@@ -4,8 +4,6 @@ if (isset($_GET['length'])) {
     generatePassword('length');
 }
 
-// $password_length = $_GET['password-length'] ?? '';
-
 function generatePassword ($length)
 {
 
