@@ -18,6 +18,13 @@ h1{
     margin-bottom: 20px;
 }
 
+.btn-back{
+    padding: 10px 15px;
+    color: white;
+    background-color: dodgerblue;
+    border: 1px solid currentColor;
+}
+
 /* alert */
 
 .alert  {

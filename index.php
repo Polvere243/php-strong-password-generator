@@ -1,11 +1,11 @@
 <?php 
-start_session()
 require_once __DIR__ . '/includes/function.php';
 
 $length = $_GET['length'] ?? '';
 
 if (!empty($length)) {
-    $password = generatePassword($length);
+    generate_password($length);
+    header('Location: destination.php');
 }
 
 ?>
@@ -19,12 +19,6 @@ if (!empty($length)) {
     <title>Document</title>
 </head>
 <body>
-    <?php if (isset($password)) :?>
-        <div class="alert">
-            <p>La tua password è: <strong><?= $password ?></strong></p>
-            <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span>
-        </div>
-    <?php endif; ?>
     <div class="container">
         <h1>Generatore di Password</h1>
         <div class="form-box">

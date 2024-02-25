@@ -1,6 +1,6 @@
 <?php
 
-function SetCharacter()
+function set_character()
 {
     $numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 0];
     $letters = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z'];
@@ -10,13 +10,13 @@ function SetCharacter()
     return $characters;
 }
 
-function generatePassword ($length)
+function generate_password ($length)
 {
 
     // creo una variabile password vuota
     $password = '';
     // stabilisco i caratteri 
-    
+    $characters = set_character();
     // calcolo quanti caratteri sono presenti nell'array
     $total_characters = count($characters);
     // genero la password estraendo caratteri casuali fino a riempire la password
@@ -30,6 +30,10 @@ function generatePassword ($length)
         $password .= $random_character;
 
     }
-    // restituisco la password generata
-    return $password;
+    // apro la sessione
+    session_start();
+    // assegno la variabile password alla superglobal SESSION
+    $_SESSION['password'] = $password;
+    
+    return;
 }
