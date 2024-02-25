@@ -1,7 +1,7 @@
 <?php 
 $length = $_GET['password-length'] ?? '';
 
-if ($length) {
+if (!empty($length)) {
     generatePassword('length');
 }
 
