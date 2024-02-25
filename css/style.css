@@ -1,5 +1,5 @@
 /* css reset */
-*{
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -8,17 +8,17 @@
 
 /* generici */
 
-body{
+body {
     background-color: rgb(122, 225, 122);
     padding: 50px;
 }
 
-h1{
+h1 {
     text-align: center;
     margin-bottom: 20px;
 }
 
-.btn-back{
+.btn-back {
     padding: 10px 15px;
     color: white;
     background-color: dodgerblue;
@@ -27,18 +27,18 @@ h1{
 
 /* alert */
 
-.alert  {
+.alert {
     padding: 20px;
     background-color: rgb(232, 106, 106);
     color: white;
     opacity: 1;
-    transition: opacity 0.6s; 
+    transition: opacity 0.6s;
     display: flex;
     justify-content: space-between;
     border-radius: 20px;
 }
 
-.closebtn{
+.closebtn {
     margin-left: 15px;
     color: white;
     font-weight: bold;
@@ -56,7 +56,7 @@ h1{
 
 /* modulo */
 
-.form-box{
+.form-box {
     background-color: white;
     padding: 20px;
     border-radius: 10px;
@@ -64,15 +64,19 @@ h1{
     margin: 0 auto;
 }
 
-.input-box{
+.input-box {
     display: flex;
     justify-content: space-between;
     align-items: center;
     margin-bottom: 50px;
 }
 
+#password {
+    padding: 5px 10px;
+}
+
 .btn,
-.btn-back{
+.btn-back {
     padding: 10px 20px;
     background-color: dodgerblue;
     color: white;
@@ -80,11 +84,9 @@ h1{
     margin-top: 20px;
 }
 
-.radio{
+.radio {
     display: flex;
     justify-content: space-between;
     gap: 20px;
-    
+
 }
-
-
