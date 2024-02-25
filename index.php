@@ -44,6 +44,9 @@ function generatePassword ($length)
     <title>Document</title>
 </head>
 <body>
+    <div class="alert">
+        <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span>
+    </div>
     <div class="container">
         <h1>Generatore di Password</h1>
         <div class="form-box">
