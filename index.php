@@ -2,7 +2,7 @@
 require_once __DIR__ . '/includes/function.php';
 // controllo il radio 
 $repetions_checked = !isset($_GET['repetition']) || empty($_GET['repetition']) ? 'checked' : '';
-$not_repetions_checked = isset($_GET['repetition']) && empty($_GET['repetition']) ? 'checked' : '';
+$not_repetitions_checked checked = isset($_GET['repetition']) && empty($_GET['repetition']) ? 'checked' : '';
 
 if (isset($_GET['length'])) {
     $repetitions_allowed = $_GET['repetition'] || false;
@@ -24,7 +24,7 @@ if (isset($_GET['length'])) {
 <body>
     <div class="container">
         <h1>Generatore di Password</h1>
-        <?php if ($error) : ?>
+        <?php if (isset($error)) : ?>
         <div class="alert">
             <p><?= $error ?></p>
             <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span>
@@ -42,8 +42,16 @@ if (isset($_GET['length'])) {
                         <label for="no">NO</label>
                         <input id="no" type="radio" name="repetition"  value="0" <?= $repetions_checked?>>
                         <label for="yes">SÌ</label>
-                        <input id="yes" type="radio" name="repetition" value="1" <?= $not_repetition_checked?>>
+                        <input id="yes" type="radio" name="repetition" value="1" <?= $not_repetitions_checked?>>
                     </span>
+                </div>
+                <div class="check">
+                    <label for="letters">Lettere</label>
+                    <input type="checkbox" name="characters[]" id="letters" value="l" checked>
+                    <label for="numbers">Numeri</label>
+                    <input type="checkbox" name="characters[]" id="numbers" value="n" checked>
+                    <label for="symbols">Simboli</label>
+                    <input type="checkbox" name="characters[]" id="symbols" value="s" checked>
                 </div>
                 <input class="btn" type="submit" value="Invia" >
             </form>
