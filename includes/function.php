@@ -1,21 +1,25 @@
 <?php
-function set_character()
+function set_character($chosen_sets)
 {
     $numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 0];
     $letters = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z'];
     $symbols = ['!', '?', '£', '%', '/', '=', '§', '{', '}', '[', ']', '$', '*']; 
-    // spargo i caratteri in un array
-    $characters = [...$numbers, ...$letters, ...$symbols];
+    // controllo i caratteri da aggiungere all'array
+    $characters = [];
+    if (in_array('l', $chosen_sets)) $characters[] = $letters;
+    if (in_array('n', $chosen_sets)) $characters[] = $numbers;
+    if (in_array('s', $chosen_sets)) $characters[] = $symbols;
     return $characters;
 }
 
 function generate_password ($length, $repetitions_allowed, $chosen_sets)
 {
-
+    // controllo che sia autorizzato almeno un tipo di caratteri
+    if (empty($chosen_sets)) return 'Devi autorizzare almeno un tipo di caratteri per procedere'; 
     // creo una variabile password vuota
     $password = '';
     // stabilisco i caratteri 
-    $characters = set_character();
+    $characters = set_character($chosen_sets);
     // calcolo quanti caratteri sono presenti nell'array
     $total_characters = count($characters);
     // dichiaro una variabile che contenga la lunghezza minima della password
