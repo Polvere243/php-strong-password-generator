@@ -6,7 +6,9 @@ $not_repetitions_checked = isset($_GET['repetition']) && empty($_GET['repetition
 $l_checked = isset($_GET['characters']) && in_array('l', $_GET['characters']) ? 'checked' : '';
 $n_checked = isset($_GET['characters']) && in_array('n', $_GET['characters']) ? 'checked' : '';
 $s_checked = isset($_GET['characters']) && in_array('s', $_GET['characters']) ? 'checked' : '';
+
 if (isset($_GET['length'])) {
+    $length = $_GET['length'];
     $repetitions_allowed = $_GET['repetition'] || false;
 
     $chosen_sets = $_GET['characters'] ?? [];
