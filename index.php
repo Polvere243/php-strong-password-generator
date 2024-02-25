@@ -29,6 +29,7 @@ if (!empty($length)) {
                     <input type="number" id="password" name="length" min="5" value="<?= $_GET['length'] ?? 5 ?>" step="1">
                 </div>
                 <div class="radio">
+                    <h4>Vuoi che i caratteri si ripetano?</h4>
                     <label for="no">NO</label>
                     <input id="no" type="radio" name="repetition" checked>
                     <label for="yes">SÌ</label>
