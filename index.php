@@ -1,5 +1,9 @@
 <?php 
 
+if (isset($_GET['length'])) {
+    generatePassword('length');
+}
+
 // $password_length = $_GET['password-length'] ?? '';
 
 function generatePassword ($length)
@@ -28,9 +32,7 @@ function generatePassword ($length)
     // restituisco la password generata
     return $password;
 }
-if (isset($_GET['password-length'])) {
-    generatePassword('password-length');
-}
+
 ?>
 
 <!DOCTYPE html>
@@ -48,7 +50,7 @@ if (isset($_GET['password-length'])) {
             <form action="" method="get">
                 <div class="input-box">
                     <label for="password">Scegli una lunghezza</label>
-                    <input type="number" id="password" name="password-length" min="5" step="1">
+                    <input type="number" id="password" name="length" min="5" step="1">
                 </div>
                 <input class="btn" type="submit" value="Invia" >
             </form>
