@@ -3,7 +3,9 @@ require_once __DIR__ . '/includes/function.php';
 // controllo il radio 
 $repetions_checked = !isset($_GET['repetition']) || empty($_GET['repetition']) ? 'checked' : '';
 $not_repetitions_checked = isset($_GET['repetition']) && empty($_GET['repetition']) ? 'checked' : '';
-
+$l_checked = isset($_GET['characters']) && in_array('l', $_GET['characters']) ? 'checked' : '';
+$n_checked = isset($_GET['characters']) && in_array('n', $_GET['characters']) ? 'checked' : '';
+$s_checked = isset($_GET['characters']) && in_array('s', $_GET['characters']) ? 'checked' : '';
 if (isset($_GET['length'])) {
     $repetitions_allowed = $_GET['repetition'] || false;
 
@@ -49,11 +51,11 @@ if (isset($_GET['length'])) {
                 </div>
                 <div class="check">
                     <label for="letters">Lettere</label>
-                    <input type="checkbox" name="characters[]" id="letters" value="l" checked>
+                    <input type="checkbox" name="characters[]" id="letters" value="l" <?= $l_checked ?>>
                     <label for="numbers">Numeri</label>
-                    <input type="checkbox" name="characters[]" id="numbers" value="n" checked>
+                    <input type="checkbox" name="characters[]" id="numbers" value="n" <?= $n_checked ?>>
                     <label for="symbols">Simboli</label>
-                    <input type="checkbox" name="characters[]" id="symbols" value="s" checked>
+                    <input type="checkbox" name="characters[]" id="symbols" value="s" <?= $s_checked ?>>
                 </div>
                 <input class="btn" type="submit" value="Invia" >
             </form>
