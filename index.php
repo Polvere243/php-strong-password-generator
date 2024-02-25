@@ -28,6 +28,14 @@ if (!empty($length)) {
                     <label for="password">Scegli una lunghezza</label>
                     <input type="number" id="password" name="length" min="5" value="<?= $_GET['length'] ?? 5 ?>" step="1">
                 </div>
+                <div class="radio">
+                    <label for="no">NO</label>
+                    <input id="no" type="radio" name="repetition" checked>
+                    <label for="yes">SÌ</label>
+                    <input id="yes" type="radio" name="repetition">
+                </div>
+                    
+
                 <input class="btn" type="submit" value="Invia" >
             </form>
         </div>
