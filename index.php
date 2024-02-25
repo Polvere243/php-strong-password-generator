@@ -1,5 +1,8 @@
 <?php 
 require_once __DIR__ . '/includes/function.php';
+// controllo il radio 
+$repetions_checked = !isset($_GET['repetition']) || empty($_GET['repetition']) ? 'checked' : '';
+$not_repetions_checked = isset($_GET['repetition']) && empty($_GET['repetition']) ? 'checked' : '';
 
 if (isset($_GET['length'])) {
     $repetitions_allowed = $_GET['repetition'] || false;
@@ -37,9 +40,9 @@ if (isset($_GET['length'])) {
                     <h4>Vuoi che i caratteri si ripetano?</h4>
                     <span>
                         <label for="no">NO</label>
-                        <input id="no" type="radio" name="repetition"  value="0">
+                        <input id="no" type="radio" name="repetition"  value="0" <?= $repetions_checked?>>
                         <label for="yes">SÌ</label>
-                        <input id="yes" type="radio" name="repetition" value="1" checked>
+                        <input id="yes" type="radio" name="repetition" value="1" <?= $not_repetition_checked?>>
                     </span>
                 </div>
                 <input class="btn" type="submit" value="Invia" >
