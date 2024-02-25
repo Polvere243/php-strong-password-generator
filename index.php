@@ -30,10 +30,12 @@ if (!empty($length)) {
                 </div>
                 <div class="radio">
                     <h4>Vuoi che i caratteri si ripetano?</h4>
-                    <label for="no">NO</label>
-                    <input id="no" type="radio" name="repetition" checked>
-                    <label for="yes">SÌ</label>
-                    <input id="yes" type="radio" name="repetition">
+                    <span>
+                        <label for="no">NO</label>
+                        <input id="no" type="radio" name="repetition" checked>
+                        <label for="yes">SÌ</label>
+                        <input id="yes" type="radio" name="repetition">
+                    </span>
                 </div>
                     
 
