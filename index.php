@@ -5,7 +5,7 @@ $length = $_GET['length'] ?? '';
 
 if (!empty($length)) {
     generate_password($length);
-    header('Location: destination.php');
+    header("Location: destination.php");
 }
 
 ?>
@@ -25,7 +25,7 @@ if (!empty($length)) {
             <form action="" method="get">
                 <div class="input-box">
                     <label for="password">Scegli una lunghezza</label>
-                    <input type="number" id="password" name="length" min="5" value="<?= $length ?? 5 ?>" step="1">
+                    <input type="number" id="password" name="length" min="5" value="<?= $_GET['length'] ?? 5 ?>" step="1">
                 </div>
                 <input class="btn" type="submit" value="Invia" >
             </form>

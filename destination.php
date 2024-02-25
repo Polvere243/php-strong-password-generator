@@ -1,10 +1,10 @@
 <?php
 session_start();
-if(isset( $_SESSION[$password])){
+if(isset($_SESSION[$password])){
     $password = $_SESSION[$password];
     session_destroy();
 } else {
-    header('Location: index.php');
+    header("Location: index.php");
 }
 
 ?>
@@ -19,11 +19,9 @@ if(isset( $_SESSION[$password])){
     <title>Document</title>
 </head>
 <body>
-    <?php if (isset($password)) :?>
-        <div class="alert">
-            <p>La tua password è: <strong><?= $password ?></strong></p>
-            <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span>
-        </div>
-    <?php endif; ?>
+    <div class="alert">
+        <p>La tua password è: <strong><?= $password ?></strong></p>
+        <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span>
+    </div>
     <a class="btn-back" href="index.php">RITORNO</a>
 </body>    
