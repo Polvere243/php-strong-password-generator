@@ -1,5 +1,5 @@
 <?php 
-
+start_session()
 require_once __DIR__ . '/includes/function.php';
 
 $length = $_GET['length'] ?? '';
