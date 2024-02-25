@@ -8,12 +8,16 @@ function generatePassword ($password_length)
     $letters = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z'];
     $symbols = ['!', '?', '£', '%', '/', '=', '§']; 
     $characters = [...$numbers, ...$letters, ...$symbols];
+    while (mb_strlen($new_password)< $password_length && str_contains($new_password, $character));
     $new_password = '';
-    // while (mb_strlen($new_password)< $password_length && str_contains($new_password, ));
+    $text = explode('', $new_password);
+    list($character) = $characters;
+    $text[]= $character;
+    return $new_password;
 }
-
-generatePassword('password-length');
-
+if (isset($_GET['password-length'])) {
+    generatePassword('password-length');
+}
 ?>
 
 <!DOCTYPE html>
@@ -31,7 +35,7 @@ generatePassword('password-length');
             <form action="" method="get">
                 <div class="input-box">
                     <label for="password">Scegli una lunghezza</label>
-                    <input type="number" id="password" name="password-length" min="1">
+                    <input type="number" id="password" name="password-length" min="5" step="1">
                 </div>
                 <input class="btn" type="submit" value="Invia" >
             </form>
