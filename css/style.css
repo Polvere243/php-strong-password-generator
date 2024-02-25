@@ -18,6 +18,17 @@ h1{
     margin-bottom: 20px;
 }
 
+/* alert */
+
+.alert  {
+    padding: 20px;
+    background-color: rgb(232, 106, 106);
+    color: white;
+    margin-bottom: 15px;
+}
+
+/* modulo */
+
 .form-box{
     background-color: white;
     padding: 20px;
@@ -37,3 +48,5 @@ h1{
     color: white;
     border-radius: 10px
 }
+
+
