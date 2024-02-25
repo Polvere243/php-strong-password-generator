@@ -5,7 +5,8 @@ $length = $_GET['length'] ?? '';
 
 if (!empty($length)) {
     generate_password($length);
-    header("Location: destination.php");
+
+    header('Location: destination.php');
 }
 
 ?>

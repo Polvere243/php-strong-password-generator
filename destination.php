@@ -1,10 +1,10 @@
 <?php
 session_start();
-if(isset($_SESSION[$password])){
-    $password = $_SESSION[$password];
+if(isset($_SESSION['password'])){
+    $password = $_SESSION['password'];
     session_destroy();
 } else {
-    header("Location: index.php");
+    header('Location: index.php');
 }
 
 ?>
