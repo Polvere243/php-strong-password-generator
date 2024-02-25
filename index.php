@@ -2,7 +2,9 @@
 require_once __DIR__ . '/includes/function.php';
 
 if (isset($_GET['length'])) {
-   $error = generate_password($length);
+    $repetitions_allowed = $_GET['repetition'] || false;
+
+   $error = generate_password($length, $repetition_allowed);
     if (!$error) header('Location: destination.php');
 }
 
