@@ -9,7 +9,7 @@ function set_character()
     return $characters;
 }
 
-function generate_password ($length, $repetition_allowed)
+function generate_password ($length, $repetitions_allowed)
 {
 
     // creo una variabile password vuota
@@ -24,6 +24,10 @@ function generate_password ($length, $repetition_allowed)
     if (empty($length)) return 'Non hai inserito nessun valore';
     if (!is_numeric($length) || $length < 0) return 'Non hai inserito un valore valido';
     if ($length < $min_length) return 'Devi inserire un valore maggiore o uguale a 5';
+    // controllo la lunghezza in base ai duplicati
+    if (!$repetitions_allowed && $length > $total_characters) {
+        return 'Il valore massimo che puoi inserire è: ' . $total_characters;
+     }
     // genero la password estraendo caratteri casuali fino a riempire la password
     while (mb_strlen($password) < $length) 
     {
@@ -31,8 +35,10 @@ function generate_password ($length, $repetition_allowed)
         $random_index = rand(0, $total_characters - 1);
         // uso l'indice casuale per estrarre i caratteri casuali
         $random_character = $characters[$random_index];
-        // concateno i caratteri casuali per formare la password
-        $password .= $random_character;
+        // concateno i caratteri casuali per formare la password, sottoponendola a un controllo
+        if ($repetitions_allowed || !str_contains($password, $random_character)) {
+            $password .= $random_character;
+        }
 
     }
     // apro la sessione
