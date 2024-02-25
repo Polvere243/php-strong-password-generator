@@ -2,7 +2,7 @@
 
 // $password_length = $_GET['password-length'] ?? '';
 
-function generatePassword ($password_length)
+function generatePassword ($length)
 {
 
     // creo una variabile password vuota
@@ -15,12 +15,18 @@ function generatePassword ($password_length)
     $characters = [...$numbers, ...$letters, ...$symbols];
     // calcolo quanti caratteri sono presenti nell'array
     $total_characters = count($characters);
-    while (mb_strlen($new_password)< $password_length && str_contains($new_password, $character));
-    $new_password = '';
-    $text = explode('', $new_password);
-    list($character) = $characters;
-    $text[]= $character;
-    return $new_password;
+    // genero la password estraendo caratteri casuali fino a riempire la password
+    while (mb_strlen($password) < $length) 
+    {
+        // ricavo un indice casuale
+        $random_index = rand(0, $total_characters - 1);
+        // uso l'indice casuale per estrarre i caratteri casuali
+        $random_character = $characters[$random_index];
+        // concateno i caratteri casuali per formare la password
+        $password .= $random_character;
+    }
+    // restituisco la password generata
+    return $password;
 }
 if (isset($_GET['password-length'])) {
     generatePassword('password-length');
