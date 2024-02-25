@@ -24,7 +24,21 @@ h1{
     padding: 20px;
     background-color: rgb(232, 106, 106);
     color: white;
+    opacity: 1;
+    transition: opacity 0.6s; 
+}
+
+.closebtn{
+    margin-left: 15px;
+    color: white;
+    font-weight: bold;
+    font-size: 22px;
     margin-bottom: 15px;
+    cursor: pointer;
+}
+
+.closebtn:hover {
+    color: black;
 }
 
 /* modulo */
