@@ -9,7 +9,7 @@ function set_character()
     return $characters;
 }
 
-function generate_password ($length, $repetitions_allowed)
+function generate_password ($length, $repetitions_allowed, $chosen_sets)
 {
 
     // creo una variabile password vuota

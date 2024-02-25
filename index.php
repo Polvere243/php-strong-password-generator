@@ -2,12 +2,14 @@
 require_once __DIR__ . '/includes/function.php';
 // controllo il radio 
 $repetions_checked = !isset($_GET['repetition']) || empty($_GET['repetition']) ? 'checked' : '';
-$not_repetitions_checked checked = isset($_GET['repetition']) && empty($_GET['repetition']) ? 'checked' : '';
+$not_repetitions_checked = isset($_GET['repetition']) && empty($_GET['repetition']) ? 'checked' : '';
 
 if (isset($_GET['length'])) {
     $repetitions_allowed = $_GET['repetition'] || false;
 
-   $error = generate_password($length, $repetitions_allowed);
+    $chosen_sets = $_GET['characters'] ?? [];
+
+   $error = generate_password($length, $repetitions_allowed, $chosen_sets);
     if (!$error) header('Location: destination.php');
 }
 
