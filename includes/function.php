@@ -18,6 +18,12 @@ function generate_password ($length)
     $characters = set_character();
     // calcolo quanti caratteri sono presenti nell'array
     $total_characters = count($characters);
+    // dichiaro una variabile che contenga la lunghezza minima della password
+    $min_length = 5;
+    // mi assicuro che il valore arrivato dall'input soddisfi i criteri
+    if (empty($length)) return 'Non hai inserito nessun valore';
+    if (!is_numeric($length) || $length < 0) return 'Non hai inserito un valore valido';
+    if ($length < $min_length) return 'Devi inserire un valore maggiore o uguale a 5';
     // genero la password estraendo caratteri casuali fino a riempire la password
     while (mb_strlen($password) < $length) 
     {
@@ -34,5 +40,5 @@ function generate_password ($length)
     // assegno la variabile password alla superglobal SESSION
     $_SESSION['password'] = $password;
     
-    return;
+    return false;
 }
