@@ -6,9 +6,9 @@ function set_character($chosen_sets)
     $symbols = ['!', '?', '£', '%', '/', '=', '§', '{', '}', '[', ']', '$', '*']; 
     // controllo i caratteri da aggiungere all'array
     $characters = [];
-    if (in_array('l', $chosen_sets)) $characters[] = $letters;
-    if (in_array('n', $chosen_sets)) $characters[] = $numbers;
-    if (in_array('s', $chosen_sets)) $characters[] = $symbols;
+    if (in_array('l', $chosen_sets)) $characters = [...$letters];
+    if (in_array('n', $chosen_sets)) $characters = [...$numbers];
+    if (in_array('s', $chosen_sets)) $characters = [...$symbols];
     return $characters;
 }
 
